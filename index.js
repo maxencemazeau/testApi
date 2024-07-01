@@ -7,7 +7,7 @@ fastify.get('/', (request, reply) => {
   })
   
   // Run the server!
-  fastify.listen({ port: 3001}, (err, address) => {
+  fastify.listen({ port: 3001, host: "0.0.0.0"}, (err, address) => {
     if (err) throw err
     console.log(`Server is running on ${address}`);
     // Server is now listening on ${address}
