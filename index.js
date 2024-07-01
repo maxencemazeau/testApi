@@ -1,6 +1,13 @@
 const fastify = require('fastify')({
     logger: true // Enable the default logger
   })
+const cors = require('@fastify/cors')
+
+fastify.register(cors, {
+    origin: '*',
+    methods: ['GET', 'PUT', 'POST', 'DELETE'], // Allow these methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+  });
 // Declare a route
 fastify.get('/', (request, reply) => {
     reply.send({ hello: 'world' })
