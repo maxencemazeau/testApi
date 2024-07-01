@@ -1,5 +1,6 @@
-const fastify = require('fastify')()
-
+const fastify = require('fastify')({
+    logger: true // Enable the default logger
+  })
 // Declare a route
 fastify.get('/', (request, reply) => {
     reply.send({ hello: 'world' })
